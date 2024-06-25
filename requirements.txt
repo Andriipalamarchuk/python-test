@@ -1,0 +1,4 @@
+fastapi==0.111.0
+fastapi-cli==0.0.4
+pymongo[ocsp]
+python-dotenv==1.0.1

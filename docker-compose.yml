@@ -1,0 +1,17 @@
+include:
+  - docker-compose.database.yml
+
+services:
+  url_minifier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongodb
+    restart: on-failure
+    env_file:
+      - .env
+    environment:
+    - MONGODB_CONNECTION_URI=mongodb://mongodb:27017/url_minifier

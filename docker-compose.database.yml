@@ -1,0 +1,14 @@
+# Use this docker compose only for development purposes when you create local instance of application without docker
+services:
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: url_minifier
+
+volumes:
+  mongo_data:
